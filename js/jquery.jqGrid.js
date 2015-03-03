@@ -10192,6 +10192,11 @@ $.jgrid.extend({
 			} else {
 				idname = $t.p.keyName;
 			}
+			//set 'id' using rowid by default - extraparam.setRowKeyFromModelOnly : true 
+			if ( o.extraparam.setRowKeyFromModelOnly == undefined || o.extraparam.setRowKeyFromModelOnly == false )
+			{
+			    tmp["id"] = rowid;
+			} 
 			if(tmp) {
 				tmp[opers.oper] = opers.editoper;
 				if (tmp[idname] === undefined || tmp[idname]==="") {
